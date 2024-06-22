@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int S, T, X;
+    
+    // Input S, T, X
+    cin >>S>> T >> X;
+    
+    // Determine if the light is on at time_to_check
+    bool light_on = false;
+    
+    if (S < T) {
+        // Case 1: S < T (light is on continuously within the same day)
+        if (S <= X && X < T) {
+            light_on = true;
+        }
+    } 
+    else {
+        // Case 2: S > T (light spans across midnight)
+        if (S <= X || X < T) {
+            light_on = true;
+        }
+    }
+    
+    // Output result
+    if (light_on) {
+        cout << "Yes\n";
+    } else {
+        cout << "No\n";
+    }
+    
+    return 0;
+} //monir
