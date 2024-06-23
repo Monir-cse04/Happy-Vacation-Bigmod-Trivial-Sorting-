@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;  // Number of test cases
+    cin >> T;
+
+    for (int t = 0; t < T; ++t) {
+        int n;  // Total number of problems
+        cin >> n;
+
+        int a, b;
+        if (n <= 10) {
+            a = n;
+            b = 0;
+        } else {
+            a = 10;
+            b = n - 10;
+        }
+
+        cout << b << " " << a << endl;
+    }
+
+    return 0;
+}
+
