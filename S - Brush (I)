@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,a;
+    cin>>n;
+    for(int i=1; i<=n; i++)
+    {
+        cin>>a;
+
+        int ar[a];
+        int sum=0;
+        for(int j=0; j<a; j++)
+        {
+            cin>>ar[j];
+            if(ar[j]>0)
+            {
+                sum+=ar[j];
+            }
+        }
+        cout<<"Case "<<i<<": "<<sum<<endl;
+    }
+}monir
