@@ -1,0 +1,41 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+string num(string x)
+{
+    int a=0;
+    for(int c=0;c<x.size();c++){
+        if(x[c]>='a' && x[c]<='z')a+=x[c]%96;
+        else if(x[c]>='A' && x[c]<='Z')a+=x[c]%64;
+    }
+    stringstream n2;
+    n2<<a;
+    x=n2.str();
+    return x;
+}
+string solve(string x)
+{
+    int a=0;
+    for(int c=0;c<x.size();c++){
+        if(x[c]>='0' && x[c]<='9')a+=(x[c]-'0');
+    }
+    stringstream n2;
+    n2<<a;
+    x=n2.str();
+    return x;
+}
+
+int main()
+{
+    string n1,n2;
+    while(getline(cin,n1) && getline(cin,n2) ){
+        n1=num(n1);
+        n2=num(n2);
+        while(n1.size()>1) n1=solve(n1);
+        while(n2.size()>1) n2=solve(n2);
+        int x=n1[0]-'0',y=n2[0]-'0';
+        if(x>y)swap(x,y);
+        cout<<fixed<<setprecision(2)<<(x/float(y))*100<<" %"<<endl;
+    }
+    return 0;
+}
