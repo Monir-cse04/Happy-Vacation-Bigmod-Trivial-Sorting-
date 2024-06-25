@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int Bigmod( int base,int power,int mod)
+{
+    if(power==0) return 1;
+    if(power % 2 ==1)
+    {
+        int a= (base%mod)%mod;
+        int b= Bigmod(base,power-1,mod);
+        return (a*b)%mod;
+    }
+    else
+    {
+        int a= Bigmod(base,power/2,mod);
+        return (a*a)%mod;
+    }
+}
+int main()
+{
+    int base,power,mod;
+    while(cin>>base>>power>>mod)//CONTINUOUS LOOP
+        cout<<Bigmod(base,power,mod)<<endl;
+}
